@@ -1,0 +1,10 @@
+FROM toflex/scala-2.13.1
+
+Run wget -O- "https://piccolo.link/sbt-1.3.5.tgz" \
+    |  tar xzf - -C /usr/local --strip-components=1 \
+    && sbt exit
+
+VOLUME /app
+WORKDIR /app
+
+CMD ["sbt"]
